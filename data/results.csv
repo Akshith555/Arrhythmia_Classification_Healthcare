@@ -1,0 +1,13 @@
+Algorithm,Accuracy
+KNN Classifier,64.84
+Logistic Regression,78.02
+Decision Tree Classifier,68.13
+Linear SVM,78.02
+Kernelized SVM,79.12
+Random Forest Classifier,75.82
+KNN with PCA,64.84
+LogIstic with PCA,79.12
+Linear SVM with PCA,79.91
+Kernal SVM with PCA,80.22
+Decision Tree Classifier with PCA,60.44
+Random Forest Classifier With PCA,70.33

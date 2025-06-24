@@ -2,12 +2,6 @@
 
 Welcome to **Arrhythmia Classification in Healthcare** – a complete machine learning pipeline to detect and classify arrhythmias from real clinical data.
 
-<p align="center">
-  <img src="assets/arrhythmia_ppt_screenshot.png" alt="Arrhythmia Project Screenshot" width="700"/>
-</p>
-
----
-
 ## 🚀 Project Overview
 
 This project demonstrates the use of modern machine learning for predicting and classifying cardiac arrhythmias in healthcare.
@@ -15,6 +9,7 @@ This project demonstrates the use of modern machine learning for predicting and 
 * **Clinical dataset** (UCI Arrhythmia)
 * **Data cleaning, outlier removal, feature selection**
 * **Supervised learning models:** KNN, Logistic Regression, SVM, Decision Tree, Random Forest, Kernelized SVM
+* **Class imbalance solutions:** SMOTE and class weighting
 * **Dimensionality reduction:** PCA
 * **Clear results/visualizations:** Confusion matrices, bar charts (with/without PCA), model comparison
 
@@ -27,33 +22,32 @@ This project demonstrates the use of modern machine learning for predicting and 
 
 ## 🗂️ Project Structure
 
-Arrhythmia_Classification_Healthcare/
-│
+```
 ├── data/
-│ └── processed_arrhythmia.csv
-│
-├── models/
-│ ├── knn_classifier.pkl
-│ ├── logistic_regression.pkl
-│ └── ... (other models)
+│   ├── arrhythmia.csv                   # Raw dataset
+│   └── processed_arrhythmia.csv         # Dataset description
 │
 ├── notebooks/
-│ ├── 01_eda_preprocessing.ipynb
-│ ├── 02_modeling.ipynb
+│   ├── 01_eda_preprocessing.ipynb
+│   └── 02_modeling.ipynb                # Combined baseline + PCA modeling
 │
 ├── Arrhythmia_ML_Project.pptx
-├── requirements.txt
-└── README.md
-
+├── requirements.txt                     # Project dependencies
+├── README.md                            # Project overview and instructions
+└── .gitignore                           # Files to ignore in version control
+```
 
 ---
 
 ## 📊 The Dataset
 
-* **Source:** [UCI Arrhythmia Dataset](https://archive.ics.uci.edu/ml/datasets/arrhythmia)
-* **452 samples × 279 features** (ECG, demographics, clinical info)
-* **Target:** Multi-class arrhythmia type
-
+- **Source:** [UCI Arrhythmia Dataset](https://archive.ics.uci.edu/ml/datasets/arrhythmia)
+- **Full Dataset:** 452 patient records × 279 features (+ 1 target class)
+- **Features:**  
+  - **Demographics:** Age, Sex, Height, Weight  
+  - **ECG Measurements:** 200+ time-series derived attributes  
+  - **Clinical Info:** 20+ patient medical and risk indicators  
+  - **Target:** Multi-class label (1–16), representing arrhythmia types
 ---
 
 ## 🧠 How It Works
@@ -92,13 +86,11 @@ Arrhythmia_Classification_Healthcare/
 
 ---
 
----
-
 ## 💾 Files Used
 
 * `processed_arrhythmia.csv` – Cleaned data
 * `/models/*.pkl` – Trained models
-* `Classification_of_Arrhythmia.pptx` – Full analysis and presentation
+* `Arrhythmia_ML_Project.pptx` – Full analysis and presentation
 
 
 
@@ -117,31 +109,30 @@ Arrhythmia_Classification_Healthcare/
 
 3. **See All Results**
 
-   * Open `Classification_of_Arrhythmia.pptx` for results, explanations, and model comparison
+   * Open `Arrhythmia_ML_Project.pptx` for results, explanations, and model comparison
+
+
+---
+## Key Highlights & Innovations
+
+- **Clinical Focus:** Designed to minimize false negatives—crucial for medical risk prediction.
+- **Robust Preprocessing:** Outlier handling, missing value imputation, and class balancing for real-world healthcare data.
+- **Model Comparisons:** Rigorous benchmarking with and without PCA across multiple classifiers (SVM, Random Forest, etc.).
+- **Interpretable Results:** Feature importance, confusion matrices, and rich visualizations to support clinical understanding.
+- **Fully Reproducible:** Step-by-step notebooks and saved models enable reproducibility and easy extension.
 
 ---
 
-## 📝 Example Use Case
+## Future Work
 
-> *“Given a patient’s ECG data, predict arrhythmia type using a robust ML workflow and highlight clinical risk.”*
-
----
-
-## 🔬 Key Innovations
-
-* Handles real-world medical data issues: Outliers, missing data, class imbalance
-* Compares models with and without dimensionality reduction
-* Focuses on recall to minimize false negatives in a clinical context
-* All code, results, and presentation are fully reproducible
+- Integrate raw ECG signal processing for even richer features.
+- Try advanced ensemble and deep learning approaches (e.g., XGBoost, CNN for signals).
+- Deploy as a clinical decision support web tool for easy use by healthcare professionals.
+- Optimize for recall and ROC-AUC using clinical cost-based metrics.
+- Expand to larger, multi-center arrhythmia datasets.
 
 ---
 
-## 📚 Acknowledgements
-
-* **Dataset:** UCI Machine Learning Repository
-* **Tech stack:** Python, scikit-learn, pandas, seaborn, matplotlib
-
----
 
 ## ❓ Questions?
 
